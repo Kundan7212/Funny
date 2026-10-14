@@ -1,0 +1,27 @@
+﻿ProductID,Product_Name,Category,Cost Price,Supplier
+1001,Smartphone,Electronics,11086.11,Global Supply Co
+1002,Laptop,Electronics,22898.55,Global Supply Co
+1003,Headphones,Electronics,Rs.9453.01,Bharat Wholesale
+1004,Smartwatch,Electronics,8250.15,Bharat Wholesale
+1005,Tablet,Electronics,Rs.18841.57,PrimeSource
+1006,Power Bank,Electronics,Rs.18336.32,Global Supply Co
+1007,Office Chair,Furniture,Rs.13139.6,Global Supply Co
+1008,Study Table,Furniture,Rs.10209.36,Bharat Wholesale
+1009,Bookshelf,Furniture,10215.31,Apex Traders
+1010,Sofa,Furniture,Rs.10341.8,Apex Traders
+1011,Bed Frame,Furniture,15073.75,PrimeSource
+1012,T-Shirt,Clothing,408.42,Global Supply Co
+1013,Jeans,Clothing,"2,960.07",PrimeSource
+1014,Jacket,Clothing,Rs.1298.93,Global Supply Co
+1015,Kurta,Clothing,"1,125.63",PrimeSource
+1016,Sneakers,Clothing,"2,164.91",PrimeSource
+1017,Rice 5kg,Grocery,322.11,Bharat Wholesale
+1018,Cooking Oil,Grocery,610.86,PrimeSource
+1019,Tea Pack,Grocery,263.09,PrimeSource
+1020,Snacks Combo,Grocery,Rs.429.58,Global Supply Co
+1021,Spices Kit,Grocery,288.93,PrimeSource
+1022,Cricket Bat,Sports,3193.06,PrimeSource
+1023,Football,Sports,"2,068.34",Global Supply Co
+1024,Yoga Mat,Sports,"2,927.88",Bharat Wholesale
+1025,Dumbbell Set,Sports,Rs.1222.83,Global Supply Co
+1026,Badminton Racket,Sports,Rs.2663.97,Apex Traders

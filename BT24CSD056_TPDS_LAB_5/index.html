@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Academic Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root { --navy:#142b52; --blue:#246bfd; --pale:#f3f6fc; }
+    body { background:var(--pale); color:#1e2b43; font-family:Arial,sans-serif; }
+    .topbar { background:var(--navy); }
+    .brand-mark { background:#fff; color:var(--blue); border-radius:9px; padding:5px 9px; }
+    .sidebar { min-height:calc(100vh - 62px); background:#fff; }
+    .side-link { display:block; color:#5a6880; text-decoration:none; padding:11px 14px; border-radius:9px; margin:4px 0; }
+    .side-link.active,.side-link:hover { color:#fff; background:var(--blue); }
+    .profile-circle { width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:#dce8ff;color:#194eaf;font-weight:bold; }
+    .stat-card { border:0; border-radius:14px; box-shadow:0 4px 18px #1c37600d; }
+    .stat-icon { width:43px;height:43px;display:grid;place-items:center;border-radius:12px;font-size:1.2rem; }
+    .progress { height:8px; background:#e8edf6; }
+    .table thead th { color:#71809a; font-size:.82rem; font-weight:600; border-bottom:1px solid #e8edf5; }
+    .table td { vertical-align:middle; padding-top:14px;padding-bottom:14px; }
+    .badge-soft { background:#e7f8ee;color:#198754; }
+    @media (max-width:767px) { .sidebar { min-height:auto; } .side-menu { display:flex; flex-wrap:wrap; gap:4px; } .side-link { padding:8px 10px; } }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark topbar px-3 px-lg-4">
+  <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span> Student Portal</a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navContent" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="navContent">
+    <div class="ms-auto d-flex align-items-center gap-3 text-white py-2">
+      <span><i class="bi bi-bell"></i></span><span class="small">Welcome back, </span><div class="profile-circle"></div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <aside class="col-md-3 col-lg-2 sidebar p-3">
+      <div class="small text-uppercase text-secondary fw-bold mb-2">Menu</div>
+      <div class="side-menu">
+        <a class="side-link active" href="#dashboard"><i class="bi bi-grid me-2"></i>Dashboard</a>
+        <a class="side-link" href="#performance"><i class="bi bi-bar-chart me-2"></i>Performance</a>
+        <a class="side-link" href="#courses"><i class="bi bi-journal-bookmark me-2"></i>Courses</a>
+        <a class="side-link" href="#assignments"><i class="bi bi-clipboard-check me-2"></i>Assignments</a>
+        <a class="side-link" href="#credits"><i class="bi bi-award me-2"></i>Credits</a>
+      </div>
+      <div class="mt-4 p-3 rounded-4" style="background:#f1f5ff">
+        <div class="fw-bold mb-1">Need help?</div><div class="small text-secondary mb-2">Contact your academic advisor for support.</div>
+        <button class="btn btn-sm btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#helpModal">Get support</button>
+      </div>
+    </aside>
+    <main class="col-md-9 col-lg-10 p-3 p-lg-4" id="dashboard">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+        <div><h2 class="fw-bold mb-1">Academic Dashboard</h2><p class="text-secondary mb-0">Track your academic progress at a glance.</p></div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal"><i class="bi bi-person-lines-fill me-2"></i>View student details</button>
+      </div>
+      <div class="card stat-card p-3 p-lg-4 mb-4">
+        <div class="d-flex align-items-center gap-3">
+          <div class="profile-circle" style="width:64px;height:64px;font-size:1.2rem">KP</div>
+          <div class="flex-grow-1"><h5 class="fw-bold mb-1">Kundan Patidar</h5><div class="text-secondary small">B.Tech • Computer Science • Semester 5</div><div class="small mt-1"><i class="bi bi-envelope me-1"></i>example.com</div></div>
+          <span class="badge text-bg-success d-none d-sm-inline">Active Student</span>
+        </div>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between"><span class="text-secondary small">Attendance</span><span class="stat-icon bg-primary-subtle text-primary"><i class="bi bi-calendar-check"></i></span></div><h3 class="fw-bold mt-2 mb-1">87%</h3><div class="progress mt-2"><div class="progress-bar" style="width:87%"></div></div></div></div>
+        <div class="col-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between"><span class="text-secondary small">Current CGPA</span><span class="stat-icon bg-success-subtle text-success"><i class="bi bi-graph-up"></i></span></div><h3 class="fw-bold mt-2 mb-1">8.45</h3><div class="text-secondary small">Out of 10.00</div></div></div>
+        <div class="col-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between"><span class="text-secondary small">Assignments</span><span class="stat-icon bg-warning-subtle text-warning"><i class="bi bi-file-earmark-text"></i></span></div><h3 class="fw-bold mt-2 mb-1">8/10</h3><div class="text-secondary small">2 pending submissions</div></div></div>
+        <div class="col-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between"><span class="text-secondary small">Credits Earned</span><span class="stat-icon bg-danger-subtle text-danger"><i class="bi bi-star"></i></span></div><h3 class="fw-bold mt-2 mb-1">92/100</h3><div class="text-secondary small">92% completed</div></div></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-xl-8" id="performance"><div class="card stat-card p-3 p-lg-4 h-100"><div class="d-flex justify-content-between align-items-center mb-3"><h5 class="fw-bold mb-0">Academic Performance</h5><span class="text-secondary small">Semester 5</span></div>
+          <div class="table-responsive"><table class="table align-middle mb-0"><thead><tr><th>#</th><th>Subject</th><th>Marks</th><th>Attendance</th><th>Status</th></tr></thead><tbody>
+            <tr><td>1</td><td>Data Structures</td><td>88/100</td><td>92%</td><td><span class="badge badge-soft">Excellent</span></td></tr>
+            <tr><td>2</td><td>Database Systems</td><td>81/100</td><td>86%</td><td><span class="badge badge-soft">Good</span></td></tr>
+            <tr><td>3</td><td>Artificial Intelligence</td><td>91/100</td><td>90%</td><td><span class="badge badge-soft">Excellent</span></td></tr>
+            <tr><td>4</td><td>Computer Networks</td><td>76/100</td><td>79%</td><td><span class="badge text-bg-warning">Improve</span></td></tr>
+          </tbody></table></div></div></div>
+        <div class="col-xl-4"><div class="card stat-card p-3 p-lg-4 mb-4"><h5 class="fw-bold mb-3">Overall Progress</h5><div class="d-flex justify-content-between small mb-2"><span>Academic completion</span><b>82%</b></div><div class="progress mb-3"><div class="progress-bar bg-success" style="width:82%"></div></div><div class="d-flex justify-content-between small mb-2"><span>Credits completed</span><b>92%</b></div><div class="progress"><div class="progress-bar bg-info" style="width:92%"></div></div></div>
+          <div class="card stat-card p-3 p-lg-4" id="assignments"><h5 class="fw-bold mb-3">Quick Actions</h5><button class="btn btn-outline-primary w-100 mb-2" data-bs-toggle="modal" data-bs-target="#detailsModal"><i class="bi bi-person me-2"></i>View Profile</button><button class="btn btn-primary w-100" onclick="alert('Your assignment list is up to date!')"><i class="bi bi-check2-square me-2"></i>Check Assignments</button></div></div>
+      </div>
+      <div class="text-center text-secondary small mt-4">© 2026 Student Portal • Academic information is sample data for demonstration.</div>
+    </main>
+  </div>
+</div>
+<div class="modal fade" id="detailsModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Student Details</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><p><b>Name:</b> Kundan Patidar</p><p><b>Student ID:</b> STU2026-104</p><p><b>Programme:</b> B.Tech Computer Science</p><p><b>Semester:</b> 5</p><p><b>Email:</b> .patidar@example.com</p></div><div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>
+<div class="modal fade" id="helpModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Academic Support</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Please contact your department office or academic advisor for assistance.</div><div class="modal-footer"><button class="btn btn-primary" data-bs-dismiss="modal">Got it</button></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
